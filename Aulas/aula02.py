@@ -103,4 +103,5 @@ print(dicionario['idade'])
 # Mostra as chaves
 print(dicionario.keys())
 
-dicionario
+nome = 'Bruna'
+print (f'Meu nome é {nome}')
