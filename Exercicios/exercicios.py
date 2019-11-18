@@ -103,9 +103,64 @@
 # # Print o nome de São Paulo
 # print('Nome da cidade de SP:', dados['cidades']['saopaulo']['nome'])
 
-# ============ Conversão de tipos:
+# # ============ Conversão de tipos:
 
-# Dado a variável var = 15, peça que o usuário digite um número e multiplique por var
+# # Dado a variável var = 15, peça que o usuário digite um número e multiplique por var
 
-var = 15
-print(int(input('Digite um número: ')) * var)
+# var = 15
+# print(int(input('Digite um número: ')) * var)
+
+# ==================== Exercício da aula04 (não fui) =========================
+
+# Programa para o cálculo de uma folha de pagamento, Os descontos são do Imposto de Renda, que
+# depende do salário bruto (conforme tabela abaixo) e 3% para o Sindicato e que o FGTS corresponde a
+# 11% do Salário Bruto, mas não é descontado (é a empresa que deposita).
+# O Salário Líquido corresponde ao Salário Bruto menos os descontos.
+# O programa deverá pedir ao usuário o valor da sua hora e a quantidade de horas trabalhadas no mês.
+# Desconto do IR:
+# Salário Bruto Desconto IR
+# Até 1.900 isento
+# De 1.901 até 2.800 7%
+# De 2.801 até 3.700 15%
+# de 3.701 até 4.600 22%
+# Acima de 4.600 27%
+
+valhora = float(input('Valor da hora: '))
+horatotal = float(input('Total de horas trabalhadas: '))
+
+bruto = valhora * horatotal
+sind = bruto * 0.03
+
+if bruto > 4600:
+
+    ir = bruto*0.27
+    pir = 27
+
+elif bruto >= 3701 and bruto <= 4600:
+
+    ir = bruto*0.22
+    pir = 22
+
+elif bruto >= 2801 and bruto <= 3700:
+
+    ir = bruto*0.15
+    pir = 15
+
+elif bruto >= 1901 and bruto <= 2800:
+
+    ir = bruto*0.07
+    pir = 7
+
+else:
+
+    ir = 0
+    pir = 0
+
+liq = bruto - ir - sind
+
+print('Salário bruto: R$', bruto)
+print(f'(-) Imposto de Renda ({pir}%): R$', ir)
+print('(-) Sindicato (3%): R$', sind)
+print('FGTS (11%): R$', bruto * 0.11)
+print('Total de descontos: R$', ir + sind)
+print('Salário líquido: R$', liq)
