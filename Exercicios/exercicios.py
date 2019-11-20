@@ -1,10 +1,10 @@
 # # ======================= AULA 1 - 11/11/2019 ================================
 
 # # Faça um programa que imprima o nome do seu time
-#print ('Corinthians!!!')
+# print ('Corinthians!!!')
 
 # # Faça um programa que peça um número e imprima esse número
-#print(input('Digite um número: '))
+# print(input('Digite um número: '))
 
 # # ======================= AULA 2 - 12/11/2019 ================================
 
@@ -45,7 +45,7 @@
 # lista = ['Corinthians', [1, 2, 3, 4, 5] ,'Palmeiras', 'São Paulo', [10, 11, 12, 13, 14],'Flamengo', 'Vasco']
 # print(lista)
 
-# # printem 3, 13, 
+# # printem 3, 13,
 # print(lista[1][2], lista[4][3], lista[-1])
 
 # # printem 5, São Paulo, 14
@@ -110,57 +110,100 @@
 # var = 15
 # print(int(input('Digite um número: ')) * var)
 
-# ==================== Exercício da aula04 (não fui) =========================
+# # ==================== Exercício da aula04 (não fui) =========================
 
-# Programa para o cálculo de uma folha de pagamento, Os descontos são do Imposto de Renda, que
-# depende do salário bruto (conforme tabela abaixo) e 3% para o Sindicato e que o FGTS corresponde a
-# 11% do Salário Bruto, mas não é descontado (é a empresa que deposita).
-# O Salário Líquido corresponde ao Salário Bruto menos os descontos.
-# O programa deverá pedir ao usuário o valor da sua hora e a quantidade de horas trabalhadas no mês.
-# Desconto do IR:
-# Salário Bruto Desconto IR
-# Até 1.900 isento
-# De 1.901 até 2.800 7%
-# De 2.801 até 3.700 15%
-# de 3.701 até 4.600 22%
-# Acima de 4.600 27%
+# # Programa para o cálculo de uma folha de pagamento, Os descontos são do Imposto de Renda, que
+# # depende do salário bruto (conforme tabela abaixo) e 3% para o Sindicato e que o FGTS corresponde a
+# # 11% do Salário Bruto, mas não é descontado (é a empresa que deposita).
+# # O Salário Líquido corresponde ao Salário Bruto menos os descontos.
+# # O programa deverá pedir ao usuário o valor da sua hora e a quantidade de horas trabalhadas no mês.
+# # Desconto do IR:
+# # Salário Bruto Desconto IR
+# # Até 1.900 isento
+# # De 1.901 até 2.800 7%
+# # De 2.801 até 3.700 15%
+# # de 3.701 até 4.600 22%
+# # Acima de 4.600 27%
 
-valhora = float(input('Valor da hora: '))
-horatotal = float(input('Total de horas trabalhadas: '))
+# print('\n============== SOFTWARE DE FOLHA DE PAGAMENTO ==============\n')
 
-bruto = valhora * horatotal
-sind = bruto * 0.03
+# valhora = float(input('Valor da hora: '))
+# horatotal = float(input('Total de horas trabalhadas: '))
 
-if bruto > 4600:
+# bruto = valhora * horatotal
+# sind = bruto * 0.03
 
-    ir = bruto*0.27
-    pir = 27
+# if bruto > 4600:
 
-elif bruto >= 3701 and bruto <= 4600:
+#     aliqt = 27
 
-    ir = bruto*0.22
-    pir = 22
+# elif bruto >= 3701 and bruto <= 4600:
 
-elif bruto >= 2801 and bruto <= 3700:
+#     aliqt = 22
 
-    ir = bruto*0.15
-    pir = 15
+# elif bruto >= 2801 and bruto <= 3700:
 
-elif bruto >= 1901 and bruto <= 2800:
+#     aliqt = 15
 
-    ir = bruto*0.07
-    pir = 7
+# elif bruto >= 1901 and bruto <= 2800:
 
-else:
+#     aliqt = 7
 
-    ir = 0
-    pir = 0
+# else:
 
-liq = bruto - ir - sind
+#     aliqt = 0
 
-print('Salário bruto: R$', bruto)
-print(f'(-) Imposto de Renda ({pir}%): R$', ir)
-print('(-) Sindicato (3%): R$', sind)
-print('FGTS (11%): R$', bruto * 0.11)
-print('Total de descontos: R$', ir + sind)
-print('Salário líquido: R$', liq)
+# ir = bruto * (aliqt/100.0)
+# liq = bruto - ir - sind
+# fgts = bruto * 0.11
+# descontos = ir + sind
+
+# print(f'\nSalário bruto ({valhora}) * ({horatotal}): R$ {bruto:4.2f}')
+# print(f'(-) Imposto de Renda ({aliqt}%): R$ {ir}')
+# print(f'(-) Sindicato (3%): R$ {sind:4.2f}')
+# print(f'FGTS (11%): R$ {fgts:4.2f}')
+# print(f'Total de descontos: R$ {descontos:4.2f}')
+# print(f'Salário líquido: R$ {liq:4.2f}')
+
+# # Criar uma função que muda o valor de nome e printa na tela
+# nome = 'João'
+
+# def mudaNome(novo_nome):
+
+#     nome = novo_nome
+#     return nome
+
+# print(mudaNome('Bruna'))
+
+# # Criar uma função que pega o conteúdo da variável texto e deixa em caixa alta
+
+# texto = 'Eu sou um cérebro, Watson. O resto é mero apêndice.'
+
+# def upper_texto(text):
+#     return text.upper()
+
+# print(upper_texto(texto))
+
+# # Crie uma função que peça 2 números e retorne o maior
+# # se o valor for igual, retorna "Valroes iguais"
+# # guarde em uma variável e print
+
+# def maior(x, y):
+
+#     if (x == y):
+#         return 'Valores iguais'
+
+#     else:
+#         return max(x,y)
+
+# n = maior(1,2)
+# print(n)
+
+# # Crie uma função que receba um número indefinido de valores numéricos 
+# # com *args e retorne os valores ordenados de forma decrescente
+
+# def ordena(*val):
+#     return sorted(val, reverse=True)
+
+# n2 = ordena(5,2,6,1,8,2)
+# print(n2)
