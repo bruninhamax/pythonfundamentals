@@ -207,3 +207,127 @@
 
 # n2 = ordena(5,2,6,1,8,2)
 # print(n2)
+
+# ================== Herança e polimorfismo ===================
+
+# Crie uma classe que represente um automóvel com os atributos:
+# Ano de fabricação;
+# Marca;
+# Preço
+
+# E os métodos:
+# get_ano;
+# get_marca;
+# get_preco
+
+class Automovel():
+    '''Classe que representa um automóvel'''
+    def __init__(self, ano, marca, preco):
+
+        self.ano = ano
+        self.marca = marca
+        self.preco = preco
+
+    def get_ano(self):
+
+        print(self.ano)
+
+    def get_marca(self):
+
+        print(self.marca)
+
+    def get_preco(self):
+
+        print(self.preco)
+
+# Crie uma classe Moto que terá o atributo "tipo" e herdará os atributos/métodos
+# da classe automóvel
+# Crie os métodos:
+# Ligar, desligar, acelerar, frear
+# Obs.: Lembre-se que a moto só pode desligar, frear e acelerar se estiver ligada.
+
+ligada = False
+
+class Moto(Automovel):
+
+    def __init__(self, ano, marca, preco, tipo='Moto'):
+
+        super().__init__(ano, marca, preco)
+
+        self.tipo = tipo
+        
+    def ligar(self):
+
+        global ligada
+
+        try:
+            if ligada == False:
+                print('Ligando')
+                print('Moto ligada')
+                ligada = True
+            else:
+                raise TypeError('Moto já está ligada')
+
+        except TypeError as ModoLigada:
+
+            print(ModoLigada)
+
+    def desligar(self):
+
+        global ligada
+
+        try:
+            
+            if ligada == True:
+                print('Desligando')
+                print('Moto desligada')
+                ligada = False
+            else:
+                raise TypeError('Moto já está desligada')
+
+        except TypeError as motoDesligada:
+
+            print(motoDesligada)
+        
+    def acelerar(self):
+
+        global ligada
+
+        try:
+
+            if ligada == True:
+                print('Acelerando')
+            else:
+                raise TypeError('Moto desligada')
+
+        except TypeError as motoDesligada:
+
+            print(motoDesligada)
+
+    def frear(self):
+
+        global ligada
+
+        try:
+
+            if ligada == True:
+                print('Freando')
+
+            else:
+                raise TypeError('Moto desligada')
+
+        except TypeError as motoDesligada:
+
+            print(motoDesligada)
+
+moto1 = Moto(2004,'Honda',13.500)
+
+moto1.get_ano()
+moto1.get_marca()
+moto1.get_preco()
+moto1.acelerar()
+moto1.ligar()
+moto1.frear()
+moto1.desligar()
+moto1.acelerar()
+moto1.desligar()
